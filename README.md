@@ -4,6 +4,8 @@ Proyecto de Programacion Orientada a Objetos, CRUD para una Tienda usando C# y M
 
 ![gatitoBesando](https://github.com/user-attachments/assets/96511b00-b58e-4311-b192-2e2a5351f374)
 
+<br><br>
+
 # Crear Base de Datos
 
 Crear la base de datos **Tienda** usando **MySQL Workbench** o **MySQL Server**.
@@ -36,6 +38,8 @@ CREATE TABLE productos (
     FOREIGN KEY (categoria_id) REFERENCES categorias(categoria_id)
 );
 ```
+
+<br><br>
 
 # Conectar Base de Datos a la Aplicacion
 
