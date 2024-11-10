@@ -4,11 +4,19 @@ Proyecto de Programacion Orientada a Objetos, CRUD para una Tienda usando C# y M
 
 ![gatitoBesando](https://github.com/user-attachments/assets/96511b00-b58e-4311-b192-2e2a5351f374)
 
-<br><br>
+<br>
+
+# Descargar proyecto
+Utiliza la opcion de `Download Zip` dentro del boton `Code` en la parte superior del repositorio o si tienes `Git` instalado utiliza el siguiente comando en tu consola.
+```bash
+git clone https://github.com/Suprimir/TiendaCRUD.git
+```
+
+<br>
 
 # Crear Base de Datos
 
-Crear la base de datos **Tienda** usando **MySQL Workbench** o **MySQL Server**.
+Crear la base de datos `Tienda` usando `MySQL Workbench` o `MySQL Server`.
 ```bash
 CREATE DATABASE tienda;
 ```
@@ -18,7 +26,7 @@ Seleccionar la base de datos recien creada para poder crear las tablas.
 USE tienda;
 ```
 
-Crear tabla **Categorias**.
+Crear tabla `Categorias`.
 ```bash
 CREATE TABLE categorias (
     categoria_id int primary key auto_increment,
@@ -27,7 +35,7 @@ CREATE TABLE categorias (
 );
 ```
 
-Crear tabla **Productos**.
+Crear tabla `Productos`.
 ```bash
 CREATE TABLE productos (
     producto_id int primary key auto_increment,
@@ -39,7 +47,7 @@ CREATE TABLE productos (
 );
 ```
 
-<br><br>
+<br>
 
 # Conectar Base de Datos a la Aplicacion
 
