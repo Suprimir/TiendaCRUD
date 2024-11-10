@@ -13,6 +13,7 @@ namespace Tienda.Controladores
             _frmLogin.btnIniciar.Click += btnIniciar_Click;
         }
 
+        // Funcion para iniciar sesion cuando se da click en el boton
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             if (_frmLogin.txtUsuario.Text == "")
@@ -26,10 +27,12 @@ namespace Tienda.Controladores
                 return;
             }
 
+            // Crea un nuevo usuario temporal con los datos obtenidos
             Usuario usuario = new Usuario();
             usuario.nombreUsuario = _frmLogin.txtUsuario.Text;
             usuario.contraseña = _frmLogin.txtContraseña.Text;
 
+            // Valida las credenciales si ese usuario existe en la lista de usuarios en el modelo usuario si es asi inicia sesion y entra en el menu
             if (usuario.ValidarCredenciales())
             {
                 MessageBox.Show("Sesión inicada correctamente.");

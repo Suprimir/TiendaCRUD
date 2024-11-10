@@ -12,6 +12,7 @@
             new Usuario(){ nombreUsuario = "cliente", contraseña = "321", administrador = false}
         };
 
+        // funcion para validar las credenciales si existen en la lista de usuarios
         public bool ValidarCredenciales()
         {
             var usuario = usuarios.Where(u => u.nombreUsuario == nombreUsuario
