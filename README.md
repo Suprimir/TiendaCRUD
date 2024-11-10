@@ -2,6 +2,8 @@
 
 Proyecto de Programacion Orientada a Objetos, CRUD para una Tienda usando C# y MySql
 
+![gatitoBesando](https://github.com/user-attachments/assets/96511b00-b58e-4311-b192-2e2a5351f374)
+
 # Crear Base de Datos
 
 Crear la base de datos **Tienda** usando **MySQL Workbench** o **MySQL Server**.
