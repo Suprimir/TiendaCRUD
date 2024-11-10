@@ -11,6 +11,7 @@ Utiliza la opcion de `Download Zip` dentro del boton `Code` en la parte superior
 ```bash
 git clone https://github.com/Suprimir/TiendaCRUD.git
 ```
+> Para pasar del login usa estas credenciales: [Usuario: admin - Contraseña: 123]
 
 <br>
 
