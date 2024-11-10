@@ -45,118 +45,122 @@
             // 
             // txtNombreProducto
             // 
-            txtNombreProducto.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreProducto.Location = new Point(167, 98);
+            txtNombreProducto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombreProducto.Location = new Point(137, 49);
             txtNombreProducto.Margin = new Padding(3, 2, 3, 2);
             txtNombreProducto.Name = "txtNombreProducto";
-            txtNombreProducto.Size = new Size(546, 30);
+            txtNombreProducto.Size = new Size(213, 27);
             txtNombreProducto.TabIndex = 4;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(32, 104);
+            lblUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.Location = new Point(15, 52);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(89, 22);
+            lblUsuario.Size = new Size(77, 21);
             lblUsuario.TabIndex = 3;
             lblUsuario.Text = "Nombre:";
             // 
             // numPrecioProdcuto
             // 
-            numPrecioProdcuto.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numPrecioProdcuto.Location = new Point(167, 143);
+            numPrecioProdcuto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numPrecioProdcuto.Location = new Point(137, 89);
             numPrecioProdcuto.Margin = new Padding(3, 2, 3, 2);
             numPrecioProdcuto.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             numPrecioProdcuto.Name = "numPrecioProdcuto";
-            numPrecioProdcuto.Size = new Size(213, 24);
+            numPrecioProdcuto.Size = new Size(159, 27);
             numPrecioProdcuto.TabIndex = 5;
             numPrecioProdcuto.TextAlign = HorizontalAlignment.Center;
             // 
             // lblPrecioProducto
             // 
             lblPrecioProducto.AutoSize = true;
-            lblPrecioProducto.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecioProducto.Location = new Point(50, 144);
+            lblPrecioProducto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrecioProducto.Location = new Point(15, 91);
             lblPrecioProducto.Name = "lblPrecioProducto";
-            lblPrecioProducto.Size = new Size(71, 22);
+            lblPrecioProducto.Size = new Size(61, 21);
             lblPrecioProducto.TabIndex = 6;
             lblPrecioProducto.Text = "Precio:";
             // 
             // txtCodigoBarrasProducto
             // 
-            txtCodigoBarrasProducto.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCodigoBarrasProducto.Location = new Point(167, 188);
+            txtCodigoBarrasProducto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCodigoBarrasProducto.Location = new Point(137, 124);
             txtCodigoBarrasProducto.Margin = new Padding(3, 2, 3, 2);
             txtCodigoBarrasProducto.Name = "txtCodigoBarrasProducto";
-            txtCodigoBarrasProducto.Size = new Size(546, 30);
+            txtCodigoBarrasProducto.Size = new Size(363, 27);
             txtCodigoBarrasProducto.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(32, 190);
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(15, 127);
             label1.Name = "label1";
-            label1.Size = new Size(121, 22);
+            label1.Size = new Size(103, 21);
             label1.TabIndex = 7;
             label1.Text = "Cod. Barras:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(32, 241);
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(15, 164);
             label2.Name = "label2";
-            label2.Size = new Size(109, 22);
+            label2.Size = new Size(95, 21);
             label2.TabIndex = 9;
             label2.Text = "Categoría:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(50, 53);
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(15, 15);
             label3.Name = "label3";
-            label3.Size = new Size(34, 22);
+            label3.Size = new Size(31, 21);
             label3.TabIndex = 12;
             label3.Text = "ID:";
             // 
             // numIDProducto
             // 
-            numIDProducto.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numIDProducto.Location = new Point(167, 52);
+            numIDProducto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numIDProducto.Location = new Point(137, 13);
             numIDProducto.Margin = new Padding(3, 2, 3, 2);
             numIDProducto.Name = "numIDProducto";
-            numIDProducto.Size = new Size(213, 24);
+            numIDProducto.Size = new Size(159, 27);
             numIDProducto.TabIndex = 11;
             numIDProducto.TextAlign = HorizontalAlignment.Center;
             // 
             // btnGuardar
             // 
-            btnGuardar.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(269, 315);
+            btnGuardar.BackColor = Color.CadetBlue;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = SystemColors.ControlLightLight;
+            btnGuardar.Location = new Point(12, 205);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(179, 32);
+            btnGuardar.Size = new Size(488, 55);
             btnGuardar.TabIndex = 13;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             // 
             // comboBoxCategoria
             // 
             comboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCategoria.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxCategoria.FormattingEnabled = true;
-            comboBoxCategoria.Location = new Point(167, 243);
+            comboBoxCategoria.Location = new Point(137, 161);
             comboBoxCategoria.Name = "comboBoxCategoria";
-            comboBoxCategoria.Size = new Size(161, 23);
+            comboBoxCategoria.Size = new Size(159, 29);
             comboBoxCategoria.TabIndex = 14;
             // 
             // FrmRegistroProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(743, 394);
+            ClientSize = new Size(512, 273);
             Controls.Add(comboBoxCategoria);
             Controls.Add(btnGuardar);
             Controls.Add(label3);
