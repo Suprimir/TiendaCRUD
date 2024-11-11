@@ -48,6 +48,17 @@ CREATE TABLE productos (
 );
 ```
 
+Crear tabla `Usuarios`.
+```bash
+CREATE TABLE usuarios(
+    usuario_id int primary key auto_increment,
+    nombre varchar(45) not null,
+    pass varchar(20) not null,
+    nivel_permiso bool not null
+);
+
+```
+
 <br>
 
 # Conectar Base de Datos a la Aplicacion
