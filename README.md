@@ -56,7 +56,11 @@ CREATE TABLE usuarios(
     pass varchar(20) not null,
     nivel_permiso bool not null
 );
+```
 
+Inserte los valores del admin por defecto para poder pasar del `Login`.
+```bash
+INSERT INTO usuarios (nombre, pass, nivel_permiso) VALUES ("admin", "123", true);
 ```
 
 <br>
