@@ -33,6 +33,9 @@ namespace Tienda.Controladores
         // validacion de un producto
         private bool ValidarCapturaProducto()
         {
+            // Esto simplemente obtiene los datos de la categoria que se selecciono
+            _categoriaSeleccionada = _lstCategorias.FirstOrDefault(c => c.Name == _frmRegistroProducto.comboBoxCategoria.Text);
+
             if (_frmRegistroProducto.txtNombreProducto.Text == "") // Si no escribio nada en el nombre del producto retorna false
                 return false;
             else if (Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value) < _categoriaSeleccionada.Price) // Si el precio es menor al minimo segun la categoria retorna false
@@ -56,9 +59,6 @@ namespace Tienda.Controladores
             }
             else
             {
-                // Esto simplemente obtiene los datos de la categoria que se selecciono
-                _categoriaSeleccionada = _lstCategorias.FirstOrDefault(c => c.Name == _frmRegistroProducto.comboBoxCategoria.Text);
-
                 // crea un producto y le asigna los valores obtenidos del form
                 Producto producto = new Producto();
                 producto.nombre = _frmRegistroProducto.txtNombreProducto.Text;

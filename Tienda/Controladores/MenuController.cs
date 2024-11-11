@@ -14,11 +14,19 @@ namespace Tienda.Controladores
             // esto es un una simple asignacion al label de permisos en el menu con una condicional ternaria para saber si el usuario es administrador o no
             _frmMenu.lblTipoUsuario.Text = $"{_frmMenu.usuarioLoggedIn.nombreUsuario} {(_frmMenu.usuarioLoggedIn.administrador ? " Admin" : " Usuario")}";
 
+            _frmMenu.btnMostrarProductos.Click += btnMostrarProductos_Click;
+
             // aqui se asigna cada funcion a cada accion de un componente especifico en nuestro view. saluditos a sanchito su amigo peso plumita
             _frmMenu.btnRegistrarProducto.Click += btnRegistrarProducto_Click;
             _frmMenu.btnRegistrarCategoria.Click += btnRegistrarCateogoria_Click;
             _frmMenu.btnCerrarSesion.Click += btnCerrarSesion_Click;
             _frmMenu.FormClosing += frmMenu_OnClosing;
+        }
+
+        private void btnMostrarProductos_Click(object sender, EventArgs e)
+        {
+            FrmVerProductos frmVerProductos = new FrmVerProductos();
+            frmVerProductos.ShowDialog();
         }
 
         // Funcion para acceder al menu de registrar producto

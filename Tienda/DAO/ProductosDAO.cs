@@ -76,5 +76,43 @@ namespace Tienda.DAO
                 }
             }
         }
+
+        public static List<Producto> ObtenerTodos()
+        {
+            List<Producto> list = new List<Producto>();
+
+            using(MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlDB"].ConnectionString))
+            {
+                string query = "SELECT p.producto_id, p.nombre, p.precio, p.codigoBarras, c.nombre  FROM productos p JOIN categorias c ON p.categoria_id = c.categoria_id;";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn)) 
+                {
+                    conn.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    { 
+                        if(reader.HasRows)
+                        {
+                            while(reader.Read())
+                            {
+                                Producto producto = new Producto();
+                                
+                                producto.id = reader.GetInt32(0);
+                                producto.nombre = reader.GetString(1);
+                                producto.precio = reader.GetDouble(2);
+                                producto.codigoBarras = reader.GetString(3);
+                                producto.categoria = reader.GetString(4);
+
+                                list.Add(producto);
+                            }
+
+                            return list;
+                        }
+
+                        return null;
+                    }
+                }
+            }
+        }
     }
 }

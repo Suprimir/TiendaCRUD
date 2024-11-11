@@ -1,4 +1,5 @@
-﻿using Tienda.Modelos;
+﻿using Tienda.DAO;
+using Tienda.Modelos;
 
 namespace Tienda.Controladores
 {
@@ -28,12 +29,13 @@ namespace Tienda.Controladores
             }
 
             // Crea un nuevo usuario temporal con los datos obtenidos
-            Usuario usuario = new Usuario();
-            usuario.nombreUsuario = _frmLogin.txtUsuario.Text;
-            usuario.contraseña = _frmLogin.txtContraseña.Text;
+            string nombreUsuario = _frmLogin.txtUsuario.Text;
+            string pass = _frmLogin.txtContraseña.Text;
+
+            Usuario usuario = UsuariosDAO.ValidarUsuarioDB(nombreUsuario, pass);
 
             // Valida las credenciales si ese usuario existe en la lista de usuarios en el modelo usuario si es asi inicia sesion y entra en el menu
-            if (usuario.ValidarCredenciales())
+            if (usuario != null)
             {
                 MessageBox.Show("Sesión inicada correctamente.");
                 FrmMenu frmMenu = new FrmMenu(usuario, _frmLogin);
