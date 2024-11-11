@@ -51,6 +51,8 @@
             dataGridViewProductos.Location = new Point(12, 12);
             dataGridViewProductos.MultiSelect = false;
             dataGridViewProductos.Name = "dataGridViewProductos";
+            dataGridViewProductos.RightToLeft = RightToLeft.No;
+            dataGridViewProductos.RowHeadersVisible = false;
             dataGridViewProductos.RowHeadersWidth = 51;
             dataGridViewProductos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -96,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(772, 450);
+            ClientSize = new Size(664, 450);
             Controls.Add(dataGridViewProductos);
             Name = "FrmVerProductos";
             Text = "Ver Productos";

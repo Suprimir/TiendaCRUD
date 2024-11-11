@@ -35,6 +35,7 @@
             lblTipoUsuarioStatic = new Label();
             pictureBox1 = new PictureBox();
             btnMostrarProductos = new Button();
+            btnMostrarCategorias = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -121,11 +122,25 @@
             btnMostrarProductos.Text = "Productos";
             btnMostrarProductos.UseVisualStyleBackColor = false;
             // 
+            // btnMostrarCategorias
+            // 
+            btnMostrarCategorias.BackColor = Color.MediumSeaGreen;
+            btnMostrarCategorias.FlatStyle = FlatStyle.Flat;
+            btnMostrarCategorias.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMostrarCategorias.ForeColor = SystemColors.ControlLightLight;
+            btnMostrarCategorias.Location = new Point(12, 83);
+            btnMostrarCategorias.Name = "btnMostrarCategorias";
+            btnMostrarCategorias.Size = new Size(156, 49);
+            btnMostrarCategorias.TabIndex = 20;
+            btnMostrarCategorias.Text = "Categorias";
+            btnMostrarCategorias.UseVisualStyleBackColor = false;
+            // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(725, 507);
+            Controls.Add(btnMostrarCategorias);
             Controls.Add(btnMostrarProductos);
             Controls.Add(pictureBox1);
             Controls.Add(lblTipoUsuarioStatic);
@@ -148,5 +163,6 @@
         private Label lblTipoUsuarioStatic;
         private PictureBox pictureBox1;
         public Button btnMostrarProductos;
+        public Button btnMostrarCategorias;
     }
 }

@@ -15,6 +15,7 @@ namespace Tienda.Controladores
             _frmMenu.lblTipoUsuario.Text = $"{_frmMenu.usuarioLoggedIn.nombreUsuario} {(_frmMenu.usuarioLoggedIn.administrador ? " Admin" : " Usuario")}";
 
             _frmMenu.btnMostrarProductos.Click += btnMostrarProductos_Click;
+            _frmMenu.btnMostrarCategorias.Click += btnMostrarCategorias_Click;
 
             // aqui se asigna cada funcion a cada accion de un componente especifico en nuestro view. saluditos a sanchito su amigo peso plumita
             _frmMenu.btnRegistrarProducto.Click += btnRegistrarProducto_Click;
@@ -23,10 +24,18 @@ namespace Tienda.Controladores
             _frmMenu.FormClosing += frmMenu_OnClosing;
         }
 
+        // funcion para acceder a un menu a ver los productos
         private void btnMostrarProductos_Click(object sender, EventArgs e)
         {
             FrmVerProductos frmVerProductos = new FrmVerProductos();
             frmVerProductos.ShowDialog();
+        }
+
+        // funcion para acceder a un menu a ver las categorias
+        private void btnMostrarCategorias_Click(object sender, EventArgs e)
+        {
+            FrmVerCategorias frmVerCategorias = new FrmVerCategorias();
+            frmVerCategorias.ShowDialog();
         }
 
         // Funcion para acceder al menu de registrar producto

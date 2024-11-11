@@ -41,9 +41,9 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(14, 183);
+            lblUsuario.Location = new Point(16, 244);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(75, 22);
+            lblUsuario.Size = new Size(95, 27);
             lblUsuario.TabIndex = 0;
             lblUsuario.Text = "Usuario";
             // 
@@ -51,29 +51,27 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContraseña.Location = new Point(14, 262);
+            lblContraseña.Location = new Point(16, 349);
             lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new Size(119, 22);
+            lblContraseña.Size = new Size(145, 27);
             lblContraseña.TabIndex = 1;
             lblContraseña.Text = "Contraseña";
             // 
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(14, 207);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Location = new Point(16, 276);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(317, 30);
+            txtUsuario.Size = new Size(362, 36);
             txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContraseña.Location = new Point(14, 286);
-            txtContraseña.Margin = new Padding(3, 2, 3, 2);
+            txtContraseña.Location = new Point(16, 381);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '•';
-            txtContraseña.Size = new Size(317, 30);
+            txtContraseña.Size = new Size(362, 36);
             txtContraseña.TabIndex = 3;
             // 
             // btnIniciar
@@ -83,10 +81,9 @@
             btnIniciar.FlatStyle = FlatStyle.Popup;
             btnIniciar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIniciar.ForeColor = SystemColors.ControlLightLight;
-            btnIniciar.Location = new Point(88, 341);
-            btnIniciar.Margin = new Padding(3, 2, 3, 2);
+            btnIniciar.Location = new Point(101, 455);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(179, 32);
+            btnIniciar.Size = new Size(205, 43);
             btnIniciar.TabIndex = 4;
             btnIniciar.Text = "Iniciar sesión";
             btnIniciar.UseVisualStyleBackColor = false;
@@ -94,25 +91,25 @@
             // pictureBoxLogin
             // 
             pictureBoxLogin.Image = Properties.Resources.catLogin;
-            pictureBoxLogin.Location = new Point(14, 12);
+            pictureBoxLogin.Location = new Point(16, 16);
+            pictureBoxLogin.Margin = new Padding(3, 4, 3, 4);
             pictureBoxLogin.Name = "pictureBoxLogin";
-            pictureBoxLogin.Size = new Size(319, 150);
+            pictureBoxLogin.Size = new Size(365, 200);
             pictureBoxLogin.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogin.TabIndex = 5;
             pictureBoxLogin.TabStop = false;
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 384);
+            ClientSize = new Size(399, 512);
             Controls.Add(pictureBoxLogin);
             Controls.Add(btnIniciar);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
             Controls.Add(lblContraseña);
             Controls.Add(lblUsuario);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmLogin";
             Text = "Log In";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogin).EndInit();

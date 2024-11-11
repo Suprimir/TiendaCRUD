@@ -22,6 +22,7 @@ namespace Tienda.DAO
                     cmd.Parameters.AddWithValue("@nombre", nombre);
                     cmd.Parameters.AddWithValue("@pass", pass);
 
+
                     conn.Open();
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
