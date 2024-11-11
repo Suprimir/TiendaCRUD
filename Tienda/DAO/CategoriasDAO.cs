@@ -60,19 +60,24 @@ namespace Tienda.DAO
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         // Mientras itera el reader creamos una categoria y la agregamos a nuestra lista.
-                        while (reader.Read())
+                        if(reader.HasRows)
                         {
-                            Categoria categoria = new Categoria();
+                            while (reader.Read())
+                            {
+                                Categoria categoria = new Categoria();
 
-                            categoria.Id = reader.GetInt32(0);
-                            categoria.Name = reader.GetString(1);
-                            categoria.Price = reader.GetDouble(2);
+                                categoria.Id = reader.GetInt32(0);
+                                categoria.Name = reader.GetString(1);
+                                categoria.Price = reader.GetDouble(2);
 
-                            list.Add(categoria);
+                                list.Add(categoria);
+                            }
+
+                            // regresamos la lista
+                            return list;
                         }
 
-                        // regresamos la lista
-                        return list;
+                        return null;
                     }
                 }
             }
@@ -93,20 +98,23 @@ namespace Tienda.DAO
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.HasRows)
                         {
-                            Categoria categoria = new Categoria();
+                            while (reader.Read())
+                            {
+                                Categoria categoria = new Categoria();
 
-                            categoria.Name = reader.GetString(1);
-                            categoria.Price = reader.GetDouble(2);
+                                categoria.Name = reader.GetString(1);
+                                categoria.Price = reader.GetDouble(2);
 
-                            return categoria;
+                                return categoria;
+                            }
                         }
+
+                        return null;
                     }
                 }
             }
-
-            return null;
         }
     }
 }

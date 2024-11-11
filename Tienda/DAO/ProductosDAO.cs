@@ -55,23 +55,26 @@ namespace Tienda.DAO
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         // mientras "itera" que devuelva el producto que coincida con el id
-                        while (reader.Read())
+                        if(reader.HasRows)
                         {
-                            Producto producto = new Producto();
+                            while (reader.Read())
+                            {
+                                Producto producto = new Producto();
 
-                            producto.id = reader.GetInt32(0);
-                            producto.nombre = reader.GetString(1);
-                            producto.precio = reader.GetDouble(2);
-                            producto.codigoBarras = reader.GetString(3);
-                            producto.categoria = reader.GetString(3);
+                                producto.id = reader.GetInt32(0);
+                                producto.nombre = reader.GetString(1);
+                                producto.precio = reader.GetDouble(2);
+                                producto.codigoBarras = reader.GetString(3);
+                                producto.categoria = reader.GetString(3);
 
-                            return producto;
+                                return producto;
+                            }
                         }
+
+                        return null;
                     }
                 }
             }
-
-            return null;
         }
     }
 }

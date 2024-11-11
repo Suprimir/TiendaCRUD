@@ -70,6 +70,9 @@ namespace Tienda.Controladores
                 if(Producto.Guardar(producto, _categoriaSeleccionada))
                 {
                     MessageBox.Show($"Producto agregado :)");
+                } else
+                {
+                    MessageBox.Show("Hubo un error en el guardado.");
                 }
             }
         }
@@ -84,7 +87,13 @@ namespace Tienda.Controladores
 
                 Producto producto = Producto.ObtenerPorID(id);
 
-                MessageBox.Show($"Producto: {producto.nombre} | Precio: {producto.precio} | CodBarra: {producto.codigoBarras} | Categoria: {producto.categoria}");
+                if(producto != null)
+                {
+                    MessageBox.Show($"Producto: {producto.nombre} | Precio: {producto.precio} | CodBarra: {producto.codigoBarras} | Categoria: {producto.categoria}.");
+                } else
+                {
+                    MessageBox.Show("No se encontro un producto con tal ID.");
+                }
             }
         }
 

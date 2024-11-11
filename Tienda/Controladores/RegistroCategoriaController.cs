@@ -39,6 +39,9 @@ namespace Tienda.Controladores
                 if (categoria != null)
                 {
                     MessageBox.Show("Categoria: " + categoria.Name + " Precio Minimo: " + categoria.Price);
+                } else
+                {
+                    MessageBox.Show("No se encontro una categoria con tal ID.");
                 }
             }
         }
