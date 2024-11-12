@@ -1,12 +1,13 @@
-﻿using Tienda.Modelos;
+﻿using Tienda.DAO;
+using Tienda.Modelos;
 
 namespace Tienda.Controladores
 {
     internal class RegistroProductoController
     {
-        private List<Categoria> _lstCategorias; // Esta lista la usaremos para poder agregar las categorias al comboBox de categorias y poder seleccionarla en el form
+        private List<Categoria> _lstCategorias = CategoriasDAO.ObtenerTodas(); // Esta lista la usaremos para poder agregar las categorias al comboBox de categorias y poder seleccionarla en el form
 
-        private Categoria _categoriaSeleccionada; 
+        private Categoria _categoriaSeleccionada; // Se declara null por ahora ya despues se le asignara valor
 
         private FrmRegistroProducto _frmRegistroProducto;
 
@@ -14,8 +15,6 @@ namespace Tienda.Controladores
         {
             _frmRegistroProducto = frmRegistroProducto;
             _frmRegistroProducto._frmMenu.Hide();
-
-            _lstCategorias = Categoria.ObtenerTodas(); // Obtenemos todas las categorias y las guardamos en la lista que definimos anteriormente
 
             // Este evento es cuando presionamos una tecla dentro del numericUpDown del id y asignamos funcion la cual basicamente ejecuta el obtenerPorID
             _frmRegistroProducto.numIDProducto.KeyDown += numIDProducto_KeyDown; 
@@ -34,11 +33,11 @@ namespace Tienda.Controladores
         private bool ValidarCapturaProducto()
         {
             // Esto simplemente obtiene los datos de la categoria que se selecciono
-            _categoriaSeleccionada = _lstCategorias.FirstOrDefault(c => c.Name == _frmRegistroProducto.comboBoxCategoria.Text);
+            _categoriaSeleccionada = _lstCategorias.FirstOrDefault(c => c.Nombre == _frmRegistroProducto.comboBoxCategoria.Text);
 
             if (_frmRegistroProducto.txtNombreProducto.Text == "") // Si no escribio nada en el nombre del producto retorna false
                 return false;
-            else if (Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value) < _categoriaSeleccionada.Price) // Si el precio es menor al minimo segun la categoria retorna false
+            else if (Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value) < _categoriaSeleccionada.Precio_minimo) // Si el precio es menor al minimo segun la categoria retorna false
                 return false;
             else if (_frmRegistroProducto.txtCodigoBarrasProducto.Text.Length == 0) // Si no escribio nada en el codBarra retorna false
                 return false;
@@ -61,13 +60,13 @@ namespace Tienda.Controladores
             {
                 // crea un producto y le asigna los valores obtenidos del form
                 Producto producto = new Producto();
-                producto.nombre = _frmRegistroProducto.txtNombreProducto.Text;
-                producto.categoria = _categoriaSeleccionada.Name;
-                producto.precio = Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value);
-                producto.codigoBarras = _frmRegistroProducto.txtCodigoBarrasProducto.Text;
+                producto.Nombre = _frmRegistroProducto.txtNombreProducto.Text;
+                producto.Categoria = _categoriaSeleccionada.Nombre;
+                producto.Precio = Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value);
+                producto.CodigoBarras = _frmRegistroProducto.txtCodigoBarrasProducto.Text;
 
                 // en un if ejecuta la funcion de guardar, si se guarda retorna true y muestra un mensaje de exito.
-                if(Producto.Guardar(producto, _categoriaSeleccionada))
+                if(ProductosDAO.GuardarEnDB(producto, _categoriaSeleccionada))
                 {
                     MessageBox.Show($"Producto agregado :)");
                 } else
@@ -85,11 +84,11 @@ namespace Tienda.Controladores
             {
                 int id = Convert.ToInt32(_frmRegistroProducto.numIDProducto.Value);
 
-                Producto producto = Producto.ObtenerPorID(id);
+                Producto producto = ProductosDAO.ObtenerPorID(id);
 
                 if(producto != null)
                 {
-                    MessageBox.Show($"Producto: {producto.nombre} | Precio: {producto.precio} | CodBarra: {producto.codigoBarras} | Categoria: {producto.categoria}.");
+                    MessageBox.Show($"Producto: {producto.Nombre} | Precio: {producto.Precio} | CodBarra: {producto.CodigoBarras} | Categoria: {producto.Categoria}.");
                 } else
                 {
                     MessageBox.Show("No se encontro un producto con tal ID.");
@@ -101,9 +100,9 @@ namespace Tienda.Controladores
         private void frmRegistroProducto_Load(object sender, EventArgs e)
         {
             // Itera entre todas las categorias de la lista de categorias y agrega el nombre de cada categoria al comboBox de categorias
-            foreach(var item in _lstCategorias)
+            foreach (var categoria in _lstCategorias)
             {
-                _frmRegistroProducto.comboBoxCategoria.Items.Add(item.Name);
+                _frmRegistroProducto.comboBoxCategoria.Items.Add(categoria.Nombre);
             }
         }
 

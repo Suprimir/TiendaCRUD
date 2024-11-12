@@ -20,9 +20,9 @@ namespace Tienda.DAO
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     // asignamos los valores a los parametros
-                    cmd.Parameters.AddWithValue("@nombre", producto.nombre);
-                    cmd.Parameters.AddWithValue("@precio", producto.precio);
-                    cmd.Parameters.AddWithValue("@codigoBarras", producto.codigoBarras);
+                    cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
+                    cmd.Parameters.AddWithValue("@precio", producto.Precio);
+                    cmd.Parameters.AddWithValue("@codigoBarras", producto.CodigoBarras);
                     cmd.Parameters.AddWithValue("@categoria_id", categoria.Id);
 
                     conn.Open();
@@ -61,11 +61,11 @@ namespace Tienda.DAO
                             {
                                 Producto producto = new Producto();
 
-                                producto.id = reader.GetInt32(0);
-                                producto.nombre = reader.GetString(1);
-                                producto.precio = reader.GetDouble(2);
-                                producto.codigoBarras = reader.GetString(3);
-                                producto.categoria = reader.GetString(3);
+                                producto.Id = reader.GetInt32(0);
+                                producto.Nombre = reader.GetString(1);
+                                producto.Precio = reader.GetDouble(2);
+                                producto.CodigoBarras = reader.GetString(3);
+                                producto.Categoria = reader.GetString(3);
 
                                 return producto;
                             }
@@ -97,11 +97,11 @@ namespace Tienda.DAO
                             {
                                 Producto producto = new Producto();
                                 
-                                producto.id = reader.GetInt32(0);
-                                producto.nombre = reader.GetString(1);
-                                producto.precio = reader.GetDouble(2);
-                                producto.codigoBarras = reader.GetString(3);
-                                producto.categoria = reader.GetString(4);
+                                producto.Id = reader.GetInt32(0);
+                                producto.Nombre = reader.GetString(1);
+                                producto.Precio = reader.GetDouble(2);
+                                producto.CodigoBarras = reader.GetString(3);
+                                producto.Categoria = reader.GetString(4);
 
                                 list.Add(producto);
                             }

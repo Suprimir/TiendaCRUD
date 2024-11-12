@@ -22,11 +22,11 @@ namespace Tienda.Controladores
 
         public void FrmVerCategorias_Load(object sender, EventArgs e)
         {
-            List<Categoria> list = CategoriasDAO.ObtenerTodas();
+            List<Categoria> _listCategorias = CategoriasDAO.ObtenerTodas();
 
-            foreach (var item in list)
+            foreach (var categoria in _listCategorias)
             {
-                _frmVerCategorias.dataGridViewCategorias.Rows.Add(item.Id, item.Name, item.Price);
+                _frmVerCategorias.dataGridViewCategorias.Rows.Add(categoria.Id, categoria.Nombre, categoria.Precio_minimo);
             }
         }
     }

@@ -33,8 +33,8 @@ namespace Tienda.DAO
                             {
                                 Usuario usuario = new Usuario();
 
-                                usuario.nombreUsuario = reader.GetString(0);
-                                usuario.administrador = reader.GetBoolean(1);
+                                usuario.NombreUsuario = reader.GetString(0);
+                                usuario.Administrador = reader.GetBoolean(1);
 
                                 return usuario;
                             }

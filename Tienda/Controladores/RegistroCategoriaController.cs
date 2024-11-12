@@ -1,5 +1,6 @@
 ﻿using Tienda.Vistas;
 using Tienda.Modelos;
+using Tienda.DAO;
 
 namespace Tienda.Controladores
 {
@@ -21,10 +22,12 @@ namespace Tienda.Controladores
         public void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
             // obtiene los datos y guarda la categoria
-            string nombre = _frmRegistroCategoria.textBoxNombre.Text;
-            double precio_minimo = Convert.ToDouble(_frmRegistroCategoria.numericPrecioMinimo.Value);
+            Categoria categoria = new Categoria();
 
-            Categoria.Guardar(nombre, precio_minimo);
+            categoria.Nombre = _frmRegistroCategoria.textBoxNombre.Text;
+            categoria.Precio_minimo = Convert.ToDouble(_frmRegistroCategoria.numericPrecioMinimo.Value);
+
+            CategoriasDAO.GuardarEnBD(categoria);
         }
 
         // Funcion que se ejcuta cuando detecta una tecla pulsada en el numeriupdown del id
@@ -33,12 +36,12 @@ namespace Tienda.Controladores
             // si la tecla presionada es la tecla enter ejecuta la funcion de obtener la categoria por su id
             if(e.KeyCode == Keys.Enter)
             {
-                Categoria categoria = Categoria.ObtenerPorID(_frmRegistroCategoria.numericID.Value);
+                Categoria categoria = CategoriasDAO.ObtenerPorID(_frmRegistroCategoria.numericID.Value);
 
                 // si la funcion devuelve una categoria valida muestra toda la informacion de la categoria
                 if (categoria != null)
                 {
-                    MessageBox.Show("Categoria: " + categoria.Name + " Precio Minimo: " + categoria.Price);
+                    MessageBox.Show("Categoria: " + categoria.Nombre + " Precio Minimo: " + categoria.Precio_minimo);
                 } else
                 {
                     MessageBox.Show("No se encontro una categoria con tal ID.");

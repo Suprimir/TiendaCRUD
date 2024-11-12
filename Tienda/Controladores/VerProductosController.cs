@@ -22,11 +22,11 @@ namespace Tienda.Controladores
 
         public void frmVerProductos_Load(object sender, EventArgs e)
         {
-            List<Producto> productos = ProductosDAO.ObtenerTodos();
+            List<Producto> lstProductos = ProductosDAO.ObtenerTodos();
 
-            foreach (var item in productos)
+            foreach (var producto in lstProductos)
             {
-                _frmVerProductos.dataGridViewProductos.Rows.Add(item.id.ToString(), item.nombre, item.precio.ToString(), item.codigoBarras, item.categoria);
+                _frmVerProductos.dataGridViewProductos.Rows.Add(producto.Id, producto.Nombre, producto.Precio, producto.CodigoBarras, producto.Categoria);
             }
         }
     }

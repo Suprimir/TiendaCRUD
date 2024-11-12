@@ -12,8 +12,10 @@ namespace Tienda.Controladores
             _frmMenu._frmLogin.Hide();
 
             // esto es un una simple asignacion al label de permisos en el menu con una condicional ternaria para saber si el usuario es administrador o no
-            _frmMenu.lblTipoUsuario.Text = $"{_frmMenu.usuarioLoggedIn.nombreUsuario} {(_frmMenu.usuarioLoggedIn.administrador ? " Admin" : " Usuario")}";
+            _frmMenu.lblUsuario.Text = $"{_frmMenu.usuarioLoggedIn.NombreUsuario}";
+            _frmMenu.lblTipoUsuario.Text = $"{(_frmMenu.usuarioLoggedIn.Administrador ? " Admin" : " Usuario")}";
 
+            // Se le asigna las funciones a los botones de mostrar los productos y categorias
             _frmMenu.btnMostrarProductos.Click += btnMostrarProductos_Click;
             _frmMenu.btnMostrarCategorias.Click += btnMostrarCategorias_Click;
 

@@ -19,8 +19,8 @@ namespace Tienda.DAO
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     // Aqui les asignamos los valores a los parametros 
-                    cmd.Parameters.AddWithValue("@nombre", categoria.Name);
-                    cmd.Parameters.AddWithValue("@precio_minimo", categoria.Price);
+                    cmd.Parameters.AddWithValue("@nombre", categoria.Nombre);
+                    cmd.Parameters.AddWithValue("@precio_minimo", categoria.Precio_minimo);
 
                     // Abrimos la conexion
                     conn.Open();
@@ -67,8 +67,8 @@ namespace Tienda.DAO
                                 Categoria categoria = new Categoria();
 
                                 categoria.Id = reader.GetInt32(0);
-                                categoria.Name = reader.GetString(1);
-                                categoria.Price = reader.GetDouble(2);
+                                categoria.Nombre = reader.GetString(1);
+                                categoria.Precio_minimo = reader.GetDouble(2);
 
                                 list.Add(categoria);
                             }
@@ -104,8 +104,8 @@ namespace Tienda.DAO
                             {
                                 Categoria categoria = new Categoria();
 
-                                categoria.Name = reader.GetString(1);
-                                categoria.Price = reader.GetDouble(2);
+                                categoria.Nombre = reader.GetString(1);
+                                categoria.Precio_minimo = reader.GetDouble(2);
 
                                 return categoria;
                             }
