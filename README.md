@@ -11,7 +11,8 @@ Utiliza la opcion de `Download Zip` dentro del boton `Code` en la parte superior
 ```bash
 git clone https://github.com/Suprimir/TiendaCRUD.git
 ```
-> Para pasar del login usa estas credenciales: [Usuario: admin - Contraseña: 123]
+Una vez descargado ejecuta el archivo Tienda.sln para poder acceder al proyecto.
+> Antes de ejecutarlo ya en Visual Studio realiza los pasos de abajo para que funcione adecuadamente.
 
 <br>
 
@@ -58,10 +59,11 @@ CREATE TABLE usuarios(
 );
 ```
 
-Inserte los valores del admin por defecto para poder pasar del `Login`.
+Inserte los valores del admin para poder pasar del `Login`.
 ```bash
 INSERT INTO usuarios (nombre, pass, nivel_permiso) VALUES ("admin", "123", true);
 ```
+> Puedes colocar un nombre y una contraseña que tu quieras solo recuerdala.
 
 <br>
 
