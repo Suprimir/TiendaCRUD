@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using Tienda.Modelos;
 
 namespace Tienda.DAO
@@ -43,7 +45,7 @@ namespace Tienda.DAO
         {
             using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlDB"].ConnectionString))
             {
-                string query = $"SELECT p.producto_id, p.nombre, p.precio, p.codigoBarras, c.nombre FROM productos p JOIN categorias c ON p.categoria_id = c.categoria_id WHERE p.producto_id = @id";
+                string query = $"SELECT p.producto_id, p.nombre, p.precio, p.codigoBarras, p.categoria_id, c.nombre FROM productos p JOIN categorias c ON p.categoria_id = c.categoria_id WHERE p.producto_id = @id";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -65,7 +67,7 @@ namespace Tienda.DAO
                                 producto.Nombre = reader.GetString(1);
                                 producto.Precio = reader.GetDouble(2);
                                 producto.CodigoBarras = reader.GetString(3);
-                                producto.Categoria = reader.GetString(3);
+                                producto.CategoriaId = reader.GetInt32(4);
 
                                 return producto;
                             }
@@ -83,7 +85,7 @@ namespace Tienda.DAO
 
             using(MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlDB"].ConnectionString))
             {
-                string query = "SELECT p.producto_id, p.nombre, p.precio, p.codigoBarras, c.nombre  FROM productos p JOIN categorias c ON p.categoria_id = c.categoria_id;";
+                string query = "SELECT p.producto_id, p.nombre, p.precio, p.codigoBarras, p.categoria_id, c.nombre  FROM productos p JOIN categorias c ON p.categoria_id = c.categoria_id;";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn)) 
                 {
@@ -101,7 +103,8 @@ namespace Tienda.DAO
                                 producto.Nombre = reader.GetString(1);
                                 producto.Precio = reader.GetDouble(2);
                                 producto.CodigoBarras = reader.GetString(3);
-                                producto.Categoria = reader.GetString(4);
+                                producto.CategoriaId = reader.GetInt32(4);
+                                producto.CategoriaNombre = reader.GetString(5);
 
                                 list.Add(producto);
                             }

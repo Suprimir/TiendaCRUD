@@ -8,14 +8,15 @@ namespace Tienda.Modelos
         private string _nombre;
         private double _precio;
         private string _codigoBarras;
-        private string _categoria;
+        private int _categoriaId;
+        private string _categoriaNombre;
 
         public int Id
         { get { return _id; } set { _id = value; } }
         public string Nombre { get { return _nombre; } set { _nombre = value; } }
         public double Precio { get { return _precio; } set { _precio = value; } }
         public string CodigoBarras { get { return _codigoBarras; } set { _codigoBarras = value; } }
-        public string Categoria { get { return _categoria; } set { _categoria = value; } }
+        public int CategoriaId { get { return _categoriaId; } set { _categoriaId = value; } }
+        public string CategoriaNombre { get { return _categoriaNombre; } set { _categoriaNombre = value; } }
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using Tienda.Vistas;
+﻿using Tienda.Properties;
+using Tienda.Vistas;
 
 namespace Tienda.Controladores
 {
@@ -11,33 +12,36 @@ namespace Tienda.Controladores
             _frmMenu = frmMenu;
             _frmMenu._frmLogin.Hide();
 
+            //_frmMenu.flowLayoutPanelUsuario.BackColor = ColorTranslator.FromHtml("#4B49AC");
+
             // esto es un una simple asignacion al label de permisos en el menu con una condicional ternaria para saber si el usuario es administrador o no
             _frmMenu.lblUsuario.Text = $"{_frmMenu.usuarioLoggedIn.NombreUsuario}";
             _frmMenu.lblTipoUsuario.Text = $"{(_frmMenu.usuarioLoggedIn.Administrador ? " Admin" : " Usuario")}";
 
             // Se le asigna las funciones a los botones de mostrar los productos y categorias
-            _frmMenu.btnMostrarProductos.Click += btnMostrarProductos_Click;
-            _frmMenu.btnMostrarCategorias.Click += btnMostrarCategorias_Click;
+            _frmMenu.btnBusqueda.Click += btnBusqueda_Click;
+
+            _frmMenu.btnRegistrar.Click += btnRegistrar_Click;
+            _frmMenu.toolStripRegistrarCategoria.Click += btnRegistrarCateogoria_Click;
+            _frmMenu.toolStripRegistrarProductos.Click += btnRegistrarProducto_Click;
 
             // aqui se asigna cada funcion a cada accion de un componente especifico en nuestro view. saluditos a sanchito su amigo peso plumita
-            _frmMenu.btnRegistrarProducto.Click += btnRegistrarProducto_Click;
-            _frmMenu.btnRegistrarCategoria.Click += btnRegistrarCateogoria_Click;
             _frmMenu.btnCerrarSesion.Click += btnCerrarSesion_Click;
             _frmMenu.FormClosing += frmMenu_OnClosing;
         }
 
-        // funcion para acceder a un menu a ver los productos
-        private void btnMostrarProductos_Click(object sender, EventArgs e)
+        private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            FrmVerProductos frmVerProductos = new FrmVerProductos();
-            frmVerProductos.ShowDialog();
+            FrmBusqueda frmBusqueda = new FrmBusqueda();
+            frmBusqueda.ShowDialog();
         }
 
-        // funcion para acceder a un menu a ver las categorias
-        private void btnMostrarCategorias_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FrmVerCategorias frmVerCategorias = new FrmVerCategorias();
-            frmVerCategorias.ShowDialog();
+            if(_frmMenu.btnRegistrar.ContextMenuStrip != null)
+            {
+                _frmMenu.btnRegistrar.ContextMenuStrip.Show(_frmMenu.btnRegistrar, new Point(_frmMenu.btnRegistrar.Width, 0));
+            }
         }
 
         // Funcion para acceder al menu de registrar producto

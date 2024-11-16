@@ -61,7 +61,7 @@ namespace Tienda.Controladores
                 // crea un producto y le asigna los valores obtenidos del form
                 Producto producto = new Producto();
                 producto.Nombre = _frmRegistroProducto.txtNombreProducto.Text;
-                producto.Categoria = _categoriaSeleccionada.Nombre;
+                producto.CategoriaId = _categoriaSeleccionada.Id;
                 producto.Precio = Convert.ToDouble(_frmRegistroProducto.numPrecioProdcuto.Value);
                 producto.CodigoBarras = _frmRegistroProducto.txtCodigoBarrasProducto.Text;
 
@@ -88,7 +88,7 @@ namespace Tienda.Controladores
 
                 if(producto != null)
                 {
-                    MessageBox.Show($"Producto: {producto.Nombre} | Precio: {producto.Precio} | CodBarra: {producto.CodigoBarras} | Categoria: {producto.Categoria}.");
+                    MessageBox.Show($"Producto: {producto.Nombre} | Precio: {producto.Precio} | CodBarra: {producto.CodigoBarras} | Categoria: {producto.CategoriaId}.");
                 } else
                 {
                     MessageBox.Show("No se encontro un producto con tal ID.");

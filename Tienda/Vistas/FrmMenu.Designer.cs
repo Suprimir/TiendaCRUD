@@ -28,172 +28,242 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblTipoUsuario = new Label();
-            btnRegistrarProducto = new Button();
+            btnRegistrar = new Button();
+            contextMenuRegistrar = new ContextMenuStrip(components);
+            toolStripRegistrarCategoria = new ToolStripMenuItem();
+            toolStripRegistrarProductos = new ToolStripMenuItem();
             btnCerrarSesion = new Button();
-            btnRegistrarCategoria = new Button();
             lblTipoUsuarioStatic = new Label();
             pictureBox1 = new PictureBox();
-            btnMostrarProductos = new Button();
-            btnMostrarCategorias = new Button();
             lblUsuarioStatic = new Label();
             lblUsuario = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanelUsuario = new FlowLayoutPanel();
+            btnBusqueda = new Button();
+            contextMenuRegistrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanelUsuario.SuspendLayout();
             SuspendLayout();
             // 
             // lblTipoUsuario
             // 
             lblTipoUsuario.AutoSize = true;
-            lblTipoUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipoUsuario.Location = new Point(477, 283);
+            lblTipoUsuario.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipoUsuario.ForeColor = SystemColors.ControlText;
+            lblTipoUsuario.Location = new Point(76, 37);
             lblTipoUsuario.Name = "lblTipoUsuario";
-            lblTipoUsuario.Size = new Size(57, 21);
+            lblTipoUsuario.Size = new Size(47, 17);
             lblTipoUsuario.TabIndex = 0;
             lblTipoUsuario.Text = "label1";
             // 
-            // btnRegistrarProducto
+            // btnRegistrar
             // 
-            btnRegistrarProducto.BackColor = Color.CadetBlue;
-            btnRegistrarProducto.FlatStyle = FlatStyle.Flat;
-            btnRegistrarProducto.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarProducto.ForeColor = SystemColors.ControlLightLight;
-            btnRegistrarProducto.Location = new Point(399, 11);
-            btnRegistrarProducto.Margin = new Padding(3, 2, 3, 2);
-            btnRegistrarProducto.Name = "btnRegistrarProducto";
-            btnRegistrarProducto.Size = new Size(223, 37);
-            btnRegistrarProducto.TabIndex = 14;
-            btnRegistrarProducto.Text = "Registrar Producto";
-            btnRegistrarProducto.UseVisualStyleBackColor = false;
+            btnRegistrar.BackColor = Color.Azure;
+            btnRegistrar.ContextMenuStrip = contextMenuRegistrar;
+            btnRegistrar.FlatAppearance.BorderSize = 0;
+            btnRegistrar.FlatStyle = FlatStyle.Flat;
+            btnRegistrar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrar.ForeColor = SystemColors.ControlText;
+            btnRegistrar.Image = Properties.Resources.registrarIcon;
+            btnRegistrar.ImageAlign = ContentAlignment.MiddleRight;
+            btnRegistrar.Location = new Point(0, 114);
+            btnRegistrar.Margin = new Padding(3, 2, 3, 2);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(205, 37);
+            btnRegistrar.TabIndex = 14;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // contextMenuRegistrar
+            // 
+            contextMenuRegistrar.BackColor = SystemColors.GradientInactiveCaption;
+            contextMenuRegistrar.BackgroundImageLayout = ImageLayout.None;
+            contextMenuRegistrar.DropShadowEnabled = false;
+            contextMenuRegistrar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            contextMenuRegistrar.ImeMode = ImeMode.NoControl;
+            contextMenuRegistrar.Items.AddRange(new ToolStripItem[] { toolStripRegistrarCategoria, toolStripRegistrarProductos });
+            contextMenuRegistrar.Name = "contextMenuBusqueda";
+            contextMenuRegistrar.ShowCheckMargin = true;
+            contextMenuRegistrar.Size = new Size(206, 60);
+            // 
+            // toolStripRegistrarCategoria
+            // 
+            toolStripRegistrarCategoria.BackColor = SystemColors.GradientActiveCaption;
+            toolStripRegistrarCategoria.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            toolStripRegistrarCategoria.ForeColor = SystemColors.ControlText;
+            toolStripRegistrarCategoria.Image = Properties.Resources.categoriasIcon;
+            toolStripRegistrarCategoria.Name = "toolStripRegistrarCategoria";
+            toolStripRegistrarCategoria.Size = new Size(205, 28);
+            toolStripRegistrarCategoria.Text = "Categorias";
+            toolStripRegistrarCategoria.ToolTipText = "Registrar categorias";
+            // 
+            // toolStripRegistrarProductos
+            // 
+            toolStripRegistrarProductos.BackColor = SystemColors.GradientActiveCaption;
+            toolStripRegistrarProductos.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            toolStripRegistrarProductos.ForeColor = SystemColors.ControlText;
+            toolStripRegistrarProductos.Image = Properties.Resources.productosIcon;
+            toolStripRegistrarProductos.MergeAction = MergeAction.Insert;
+            toolStripRegistrarProductos.Name = "toolStripRegistrarProductos";
+            toolStripRegistrarProductos.Size = new Size(205, 28);
+            toolStripRegistrarProductos.Text = "Productos";
+            toolStripRegistrarProductos.ToolTipText = "Visualizar productos";
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.BackColor = Color.LightCoral;
+            btnCerrarSesion.Anchor = AnchorStyles.Bottom;
+            btnCerrarSesion.BackColor = Color.SlateGray;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
-            btnCerrarSesion.Location = new Point(399, 332);
-            btnCerrarSesion.Margin = new Padding(3, 2, 3, 2);
+            btnCerrarSesion.Location = new Point(-2, 343);
+            btnCerrarSesion.Margin = new Padding(0);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(223, 37);
+            btnCerrarSesion.Size = new Size(210, 37);
             btnCerrarSesion.TabIndex = 15;
             btnCerrarSesion.Text = "Cerrar Sesion";
             btnCerrarSesion.UseVisualStyleBackColor = false;
             // 
-            // btnRegistrarCategoria
-            // 
-            btnRegistrarCategoria.BackColor = Color.CadetBlue;
-            btnRegistrarCategoria.FlatStyle = FlatStyle.Flat;
-            btnRegistrarCategoria.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarCategoria.ForeColor = SystemColors.ControlLightLight;
-            btnRegistrarCategoria.Location = new Point(401, 62);
-            btnRegistrarCategoria.Margin = new Padding(3, 2, 3, 2);
-            btnRegistrarCategoria.Name = "btnRegistrarCategoria";
-            btnRegistrarCategoria.Size = new Size(223, 37);
-            btnRegistrarCategoria.TabIndex = 16;
-            btnRegistrarCategoria.Text = "Registrar Categoria";
-            btnRegistrarCategoria.UseVisualStyleBackColor = false;
-            // 
             // lblTipoUsuarioStatic
             // 
             lblTipoUsuarioStatic.AutoSize = true;
-            lblTipoUsuarioStatic.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipoUsuarioStatic.Location = new Point(399, 283);
+            lblTipoUsuarioStatic.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTipoUsuarioStatic.ForeColor = SystemColors.ControlText;
+            lblTipoUsuarioStatic.Location = new Point(3, 37);
             lblTipoUsuarioStatic.Name = "lblTipoUsuarioStatic";
-            lblTipoUsuarioStatic.Size = new Size(78, 21);
+            lblTipoUsuarioStatic.Size = new Size(67, 16);
             lblTipoUsuarioStatic.TabIndex = 17;
             lblTipoUsuarioStatic.Text = "Permisos:";
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.catPfp;
-            pictureBox1.Location = new Point(546, 232);
+            pictureBox1.Location = new Point(146, 0);
+            pictureBox1.Margin = new Padding(0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(76, 93);
+            pictureBox1.Size = new Size(62, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
-            // btnMostrarProductos
-            // 
-            btnMostrarProductos.BackColor = Color.MediumSeaGreen;
-            btnMostrarProductos.FlatStyle = FlatStyle.Flat;
-            btnMostrarProductos.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMostrarProductos.ForeColor = SystemColors.ControlLightLight;
-            btnMostrarProductos.Location = new Point(10, 11);
-            btnMostrarProductos.Margin = new Padding(3, 2, 3, 2);
-            btnMostrarProductos.Name = "btnMostrarProductos";
-            btnMostrarProductos.Size = new Size(136, 37);
-            btnMostrarProductos.TabIndex = 19;
-            btnMostrarProductos.Text = "Productos";
-            btnMostrarProductos.UseVisualStyleBackColor = false;
-            // 
-            // btnMostrarCategorias
-            // 
-            btnMostrarCategorias.BackColor = Color.MediumSeaGreen;
-            btnMostrarCategorias.FlatStyle = FlatStyle.Flat;
-            btnMostrarCategorias.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMostrarCategorias.ForeColor = SystemColors.ControlLightLight;
-            btnMostrarCategorias.Location = new Point(10, 62);
-            btnMostrarCategorias.Margin = new Padding(3, 2, 3, 2);
-            btnMostrarCategorias.Name = "btnMostrarCategorias";
-            btnMostrarCategorias.Size = new Size(136, 37);
-            btnMostrarCategorias.TabIndex = 20;
-            btnMostrarCategorias.Text = "Categorias";
-            btnMostrarCategorias.UseVisualStyleBackColor = false;
-            // 
             // lblUsuarioStatic
             // 
+            lblUsuarioStatic.Anchor = AnchorStyles.Left;
             lblUsuarioStatic.AutoSize = true;
-            lblUsuarioStatic.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuarioStatic.Location = new Point(401, 232);
+            lblUsuarioStatic.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuarioStatic.ForeColor = SystemColors.ControlText;
+            lblUsuarioStatic.Location = new Point(3, 5);
+            lblUsuarioStatic.Margin = new Padding(3, 5, 3, 10);
             lblUsuarioStatic.Name = "lblUsuarioStatic";
-            lblUsuarioStatic.Size = new Size(70, 21);
+            lblUsuarioStatic.Padding = new Padding(0, 5, 0, 0);
+            lblUsuarioStatic.Size = new Size(59, 21);
             lblUsuarioStatic.TabIndex = 21;
             lblUsuarioStatic.Text = "Usuario:";
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(477, 232);
+            lblUsuario.Dock = DockStyle.Top;
+            lblUsuario.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.ForeColor = SystemColors.ControlText;
+            lblUsuario.ImageAlign = ContentAlignment.MiddleRight;
+            lblUsuario.Location = new Point(68, 5);
+            lblUsuario.Margin = new Padding(3, 5, 3, 10);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(57, 21);
+            lblUsuario.Padding = new Padding(0, 5, 0, 0);
+            lblUsuario.RightToLeft = RightToLeft.No;
+            lblUsuario.Size = new Size(47, 22);
             lblUsuario.TabIndex = 22;
             lblUsuario.Text = "label1";
+            lblUsuario.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.Azure;
+            flowLayoutPanel1.Controls.Add(pictureBox1);
+            flowLayoutPanel1.Controls.Add(flowLayoutPanelUsuario);
+            flowLayoutPanel1.Controls.Add(btnBusqueda);
+            flowLayoutPanel1.Controls.Add(btnRegistrar);
+            flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel1.Location = new Point(0, 1);
+            flowLayoutPanel1.Margin = new Padding(0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(208, 342);
+            flowLayoutPanel1.TabIndex = 23;
+            // 
+            // flowLayoutPanelUsuario
+            // 
+            flowLayoutPanelUsuario.BackColor = Color.LightCyan;
+            flowLayoutPanelUsuario.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanelUsuario.Controls.Add(lblUsuarioStatic);
+            flowLayoutPanelUsuario.Controls.Add(lblUsuario);
+            flowLayoutPanelUsuario.Controls.Add(lblTipoUsuarioStatic);
+            flowLayoutPanelUsuario.Controls.Add(lblTipoUsuario);
+            flowLayoutPanelUsuario.Location = new Point(0, 0);
+            flowLayoutPanelUsuario.Margin = new Padding(0);
+            flowLayoutPanelUsuario.Name = "flowLayoutPanelUsuario";
+            flowLayoutPanelUsuario.Size = new Size(146, 71);
+            flowLayoutPanelUsuario.TabIndex = 24;
+            // 
+            // btnBusqueda
+            // 
+            btnBusqueda.BackColor = Color.Azure;
+            btnBusqueda.BackgroundImageLayout = ImageLayout.Zoom;
+            btnBusqueda.FlatAppearance.BorderSize = 0;
+            btnBusqueda.FlatStyle = FlatStyle.Flat;
+            btnBusqueda.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBusqueda.ForeColor = SystemColors.ControlText;
+            btnBusqueda.Image = Properties.Resources.searchIcon;
+            btnBusqueda.ImageAlign = ContentAlignment.MiddleRight;
+            btnBusqueda.Location = new Point(0, 73);
+            btnBusqueda.Margin = new Padding(3, 2, 3, 2);
+            btnBusqueda.Name = "btnBusqueda";
+            btnBusqueda.RightToLeft = RightToLeft.No;
+            btnBusqueda.Size = new Size(205, 37);
+            btnBusqueda.TabIndex = 25;
+            btnBusqueda.Text = "Busqueda";
+            btnBusqueda.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBusqueda.UseVisualStyleBackColor = false;
             // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(634, 380);
-            Controls.Add(lblUsuario);
-            Controls.Add(lblUsuarioStatic);
-            Controls.Add(btnMostrarCategorias);
-            Controls.Add(btnMostrarProductos);
-            Controls.Add(pictureBox1);
-            Controls.Add(lblTipoUsuarioStatic);
-            Controls.Add(btnRegistrarCategoria);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(btnCerrarSesion);
-            Controls.Add(btnRegistrarProducto);
-            Controls.Add(lblTipoUsuario);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "FrmMenu";
             Text = "Menu";
+            contextMenuRegistrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanelUsuario.ResumeLayout(false);
+            flowLayoutPanelUsuario.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         public Button btnCerrarSesion;
         public Label lblTipoUsuario;
-        public Button btnRegistrarProducto;
-        public Button btnRegistrarCategoria;
+        public Button btnRegistrar;
         private Label lblTipoUsuarioStatic;
         private PictureBox pictureBox1;
-        public Button btnMostrarProductos;
-        public Button btnMostrarCategorias;
         private Label lblUsuarioStatic;
         public Label lblUsuario;
+        private FlowLayoutPanel flowLayoutPanel1;
+        public Button btnBusqueda;
+        public ContextMenuStrip contextMenuRegistrar;
+        public ToolStripMenuItem toolStripRegistrarCategoria;
+        public ToolStripMenuItem toolStripRegistrarProductos;
+        public FlowLayoutPanel flowLayoutPanelUsuario;
     }
 }

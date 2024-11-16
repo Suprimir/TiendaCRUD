@@ -11,14 +11,17 @@ using Tienda.Controladores;
 
 namespace Tienda.Vistas
 {
-    public partial class FrmVerCategorias : Form
+    public partial class FrmBusqueda : Form
     {
-        private VerCategoriasController _verCategoriaController;
-        public FrmVerCategorias()
+        public FrmMenu _frmMenu;
+        private BusquedaController busquedaController;
+        public FrmBusqueda(FrmMenu frmMenu)
         {
+            this._frmMenu = frmMenu;
+
             InitializeComponent();
 
-            _verCategoriaController = new VerCategoriasController(this);
+            busquedaController = new BusquedaController(this);
         }
     }
 }

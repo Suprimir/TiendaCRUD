@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using Tienda.Modelos;
 
 namespace Tienda.DAO
@@ -42,47 +44,6 @@ namespace Tienda.DAO
             }
         }
 
-        // Funcion para obtener todas las categorias 
-        public static List<Categoria> ObtenerTodas()
-        {
-            // Definimos una lista de categorias la cual retornaremos en esta funcion
-            List<Categoria > list = new List<Categoria>();
-
-            using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlDB"].ConnectionString))
-            {
-                string query = "SELECT * FROM categorias";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                {
-                    conn.Open();
-
-                    // Creamos un reader el cual iterara por todos los registros que devuelva la consulta
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        // Mientras itera el reader creamos una categoria y la agregamos a nuestra lista.
-                        if(reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                Categoria categoria = new Categoria();
-
-                                categoria.Id = reader.GetInt32(0);
-                                categoria.Nombre = reader.GetString(1);
-                                categoria.Precio_minimo = reader.GetDouble(2);
-
-                                list.Add(categoria);
-                            }
-
-                            // regresamos la lista
-                            return list;
-                        }
-
-                        return null;
-                    }
-                }
-            }
-        }
-
         // Funcion para obtener una categoria por su id
         public static Categoria ObtenerPorID(decimal id)
         {
@@ -109,6 +70,47 @@ namespace Tienda.DAO
 
                                 return categoria;
                             }
+                        }
+
+                        return null;
+                    }
+                }
+            }
+        }
+
+        // Funcion para obtener todas las categorias 
+        public static List<Categoria> ObtenerTodas()
+        {
+            // Definimos una lista de categorias la cual retornaremos en esta funcion
+            List<Categoria> list = new List<Categoria>();
+
+            using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlDB"].ConnectionString))
+            {
+                string query = "SELECT * FROM categorias";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    conn.Open();
+
+                    // Creamos un reader el cual iterara por todos los registros que devuelva la consulta
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        // Mientras itera el reader creamos una categoria y la agregamos a nuestra lista.
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Categoria categoria = new Categoria();
+
+                                categoria.Id = reader.GetInt32(0);
+                                categoria.Nombre = reader.GetString(1);
+                                categoria.Precio_minimo = reader.GetDouble(2);
+
+                                list.Add(categoria);
+                            }
+
+                            // regresamos la lista
+                            return list;
                         }
 
                         return null;
