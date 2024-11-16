@@ -32,7 +32,7 @@ namespace Tienda.Controladores
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            FrmBusqueda frmBusqueda = new FrmBusqueda();
+            FrmBusqueda frmBusqueda = new FrmBusqueda(_frmMenu);
             frmBusqueda.ShowDialog();
         }
 
