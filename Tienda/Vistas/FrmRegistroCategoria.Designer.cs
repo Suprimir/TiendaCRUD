@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistroCategoria));
             numericID = new NumericUpDown();
             lblID = new Label();
             lblNombre = new Label();
@@ -35,6 +36,7 @@
             lblPrecioMinimo = new Label();
             numericPrecioMinimo = new NumericUpDown();
             btnGuardarCategoria = new Button();
+            btnReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)numericID).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericPrecioMinimo).BeginInit();
             SuspendLayout();
@@ -100,18 +102,34 @@
             btnGuardarCategoria.FlatStyle = FlatStyle.Flat;
             btnGuardarCategoria.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardarCategoria.ForeColor = SystemColors.ControlLightLight;
-            btnGuardarCategoria.Location = new Point(12, 120);
+            btnGuardarCategoria.Location = new Point(55, 120);
             btnGuardarCategoria.Name = "btnGuardarCategoria";
-            btnGuardarCategoria.Size = new Size(278, 43);
+            btnGuardarCategoria.Size = new Size(238, 43);
             btnGuardarCategoria.TabIndex = 6;
             btnGuardarCategoria.Text = "Guardar";
             btnGuardarCategoria.UseVisualStyleBackColor = false;
+            // 
+            // btnReturn
+            // 
+            btnReturn.BackColor = Color.CadetBlue;
+            btnReturn.FlatStyle = FlatStyle.Flat;
+            btnReturn.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Image = Properties.Resources.returnIconWhite;
+            btnReturn.Location = new Point(12, 120);
+            btnReturn.Margin = new Padding(3, 2, 3, 2);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(37, 43);
+            btnReturn.TabIndex = 16;
+            btnReturn.UseVisualStyleBackColor = false;
             // 
             // FrmRegistroCategoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(305, 174);
+            Controls.Add(btnReturn);
             Controls.Add(btnGuardarCategoria);
             Controls.Add(numericPrecioMinimo);
             Controls.Add(lblPrecioMinimo);
@@ -119,6 +137,7 @@
             Controls.Add(lblNombre);
             Controls.Add(lblID);
             Controls.Add(numericID);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmRegistroCategoria";
             Text = "Registrar Categoria";
             ((System.ComponentModel.ISupportInitialize)numericID).EndInit();
@@ -135,6 +154,6 @@
         public TextBox textBoxNombre;
         public NumericUpDown numericPrecioMinimo;
         public Button btnGuardarCategoria;
-        private NumericUpDown numericUpDown2;
+        public Button btnReturn;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistroProducto));
             txtNombreProducto = new TextBox();
             lblUsuario = new Label();
             numPrecioProdcuto = new NumericUpDown();
@@ -39,6 +40,7 @@
             numIDProducto = new NumericUpDown();
             btnGuardar = new Button();
             comboBoxCategoria = new ComboBox();
+            btnReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)numPrecioProdcuto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numIDProducto).BeginInit();
             SuspendLayout();
@@ -138,10 +140,10 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = SystemColors.ControlLightLight;
-            btnGuardar.Location = new Point(12, 205);
+            btnGuardar.Location = new Point(392, 223);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(488, 55);
+            btnGuardar.Size = new Size(108, 37);
             btnGuardar.TabIndex = 13;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -156,11 +158,27 @@
             comboBoxCategoria.Size = new Size(159, 29);
             comboBoxCategoria.TabIndex = 14;
             // 
+            // btnReturn
+            // 
+            btnReturn.BackColor = Color.CadetBlue;
+            btnReturn.FlatStyle = FlatStyle.Flat;
+            btnReturn.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReturn.ForeColor = SystemColors.ControlLightLight;
+            btnReturn.Image = Properties.Resources.returnIconWhite;
+            btnReturn.Location = new Point(349, 223);
+            btnReturn.Margin = new Padding(3, 2, 3, 2);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(37, 37);
+            btnReturn.TabIndex = 15;
+            btnReturn.UseVisualStyleBackColor = false;
+            // 
             // FrmRegistroProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(512, 273);
+            Controls.Add(btnReturn);
             Controls.Add(comboBoxCategoria);
             Controls.Add(btnGuardar);
             Controls.Add(label3);
@@ -172,6 +190,7 @@
             Controls.Add(numPrecioProdcuto);
             Controls.Add(txtNombreProducto);
             Controls.Add(lblUsuario);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmRegistroProducto";
             Text = "Registro de Producto";
@@ -193,5 +212,6 @@
         public NumericUpDown numIDProducto;
         public Button btnGuardar;
         public ComboBox comboBoxCategoria;
+        public Button btnReturn;
     }
 }

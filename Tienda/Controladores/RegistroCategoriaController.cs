@@ -16,6 +16,7 @@ namespace Tienda.Controladores
             _frmRegistroCategoria.numericID.KeyDown += numericID_KeyDown; // Cuando detecta que se presiono una tecla en el numericupdown del id y ejecuta su respectiva funcion
             _frmRegistroCategoria.btnGuardarCategoria.Click += btnGuardarCategoria_Click; // Cuando detecta el click en el boton de guardar categoria ejecuta su respectiva funcion
             _frmRegistroCategoria.FormClosing += frmRegistroCategoria_OnClosing; // Cuando se cierra la ventana de registro categoria ejecuta su respectiva funcion
+            _frmRegistroCategoria.btnReturn.Click += frmRegistroCategoria_OnClosing;
         }
 
         // Funcion que se ejecuta cuando se da click en el boton de guardar categoria
@@ -23,7 +24,6 @@ namespace Tienda.Controladores
         {
             // obtiene los datos y guarda la categoria
             Categoria categoria = new Categoria();
-
             categoria.Nombre = _frmRegistroCategoria.textBoxNombre.Text;
             categoria.Precio_minimo = Convert.ToDouble(_frmRegistroCategoria.numericPrecioMinimo.Value);
 
@@ -50,7 +50,7 @@ namespace Tienda.Controladores
         }
 
         // funcion que cuando se cierra el form de registro de categoria muestre el menu y cierre este formulario
-        public void frmRegistroCategoria_OnClosing(object sender, FormClosingEventArgs e)
+        public void frmRegistroCategoria_OnClosing(object sender, EventArgs e)
         {
             _frmRegistroCategoria._frmMenu.Show();
             _frmRegistroCategoria.Dispose();

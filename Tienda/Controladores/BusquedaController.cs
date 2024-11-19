@@ -15,12 +15,16 @@ namespace Tienda.Controladores
         public BusquedaController(FrmBusqueda frmBusqueda)
         {
             this._frmBusqueda = frmBusqueda;
+            _frmBusqueda._frmMenu.Hide();
 
             categorias = CategoriasDAO.ObtenerTodas();
             productos = ProductosDAO.ObtenerTodos();
 
             _frmBusqueda.comboBoxSeleccion.TextChanged += comboBoxSeleccion_TextChanged;
-            _frmBusqueda.textBoxBuscar.TextChanged += textBoxBuscar_TextChanged; 
+            _frmBusqueda.textBoxBuscar.TextChanged += textBoxBuscar_TextChanged;
+
+            _frmBusqueda.FormClosing += FrmBusqueda_OnClosing;
+            _frmBusqueda.btnReturn.Click += FrmBusqueda_OnClosing;
         }
 
         private void comboBoxSeleccion_TextChanged(object sender, EventArgs e)
@@ -30,13 +34,13 @@ namespace Tienda.Controladores
             switch (_frmBusqueda.comboBoxSeleccion.Text)
             {
                 case "Categorias":
-                    var buscarCategorias = categorias.Where(c => c.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text)).ToList();
+                    var buscarCategorias = categorias.Where(c => c.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
                     
                     _frmBusqueda.dataGridViewBusqueda.DataSource = buscarCategorias;
 
                     break;
                 case "Productos":
-                    var buscarProductos = productos.Where(p => p.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text)).ToList();
+                    var buscarProductos = productos.Where(p => p.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
 
                     _frmBusqueda.dataGridViewBusqueda.DataSource = buscarProductos;
 
@@ -47,6 +51,12 @@ namespace Tienda.Controladores
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             comboBoxSeleccion_TextChanged(sender, e);
+        }
+
+        private void FrmBusqueda_OnClosing(object sender, EventArgs e)
+        {
+            _frmBusqueda._frmMenu.Show();
+            _frmBusqueda.Dispose();
         }
     }
 }

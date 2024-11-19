@@ -93,6 +93,26 @@ namespace Tienda.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap loginForm {
+            get {
+                object obj = ResourceManager.GetObject("loginForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap menuForm {
+            get {
+                object obj = ResourceManager.GetObject("menuForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap productosIcon {
             get {
                 object obj = ResourceManager.GetObject("productosIcon", resourceCulture);
@@ -116,6 +136,26 @@ namespace Tienda.Properties {
         public static System.Drawing.Bitmap registrarIcon {
             get {
                 object obj = ResourceManager.GetObject("registrarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap returnIcon {
+            get {
+                object obj = ResourceManager.GetObject("returnIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap returnIconWhite {
+            get {
+                object obj = ResourceManager.GetObject("returnIconWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

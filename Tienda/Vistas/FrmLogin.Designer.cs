@@ -41,66 +41,65 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Font = new Font("Microsoft JhengHei", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsuario.Location = new Point(14, 183);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(79, 24);
+            lblUsuario.Size = new Size(89, 22);
             lblUsuario.TabIndex = 0;
-            lblUsuario.Text = "Usuario";
+            lblUsuario.Text = "Usuario:";
             // 
             // lblContraseña
             // 
             lblContraseña.AutoSize = true;
-            lblContraseña.Font = new Font("Microsoft JhengHei", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblContraseña.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblContraseña.Location = new Point(14, 251);
             lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new Size(113, 24);
+            lblContraseña.Size = new Size(125, 22);
             lblContraseña.TabIndex = 1;
-            lblContraseña.Text = "Contraseña";
+            lblContraseña.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
             txtUsuario.BackColor = SystemColors.Window;
-            txtUsuario.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUsuario.Location = new Point(14, 207);
             txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(317, 30);
+            txtUsuario.Size = new Size(317, 26);
             txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
-            txtContraseña.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContraseña.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtContraseña.Location = new Point(14, 275);
             txtContraseña.Margin = new Padding(3, 2, 3, 2);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '•';
-            txtContraseña.Size = new Size(317, 30);
+            txtContraseña.Size = new Size(317, 26);
             txtContraseña.TabIndex = 3;
             // 
             // btnIniciar
             // 
             btnIniciar.BackColor = Color.CadetBlue;
             btnIniciar.BackgroundImageLayout = ImageLayout.None;
+            btnIniciar.FlatAppearance.BorderColor = Color.White;
             btnIniciar.FlatAppearance.BorderSize = 0;
-            btnIniciar.FlatStyle = FlatStyle.Popup;
-            btnIniciar.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIniciar.Font = new Font("Arial Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIniciar.ForeColor = SystemColors.ControlLightLight;
-            btnIniciar.Location = new Point(-6, 323);
-            btnIniciar.Margin = new Padding(3, 2, 3, 2);
+            btnIniciar.Location = new Point(84, 321);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(361, 67);
+            btnIniciar.Size = new Size(168, 42);
             btnIniciar.TabIndex = 4;
             btnIniciar.Text = "Iniciar sesión";
             btnIniciar.UseVisualStyleBackColor = false;
             // 
             // pictureBoxLogin
             // 
-            pictureBoxLogin.Image = Properties.Resources.catLogin;
+            pictureBoxLogin.Image = Properties.Resources.loginForm;
             pictureBoxLogin.Location = new Point(14, 12);
             pictureBoxLogin.Name = "pictureBoxLogin";
             pictureBoxLogin.Size = new Size(319, 150);
-            pictureBoxLogin.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLogin.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogin.TabIndex = 5;
             pictureBoxLogin.TabStop = false;
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             lblTipoUsuario = new Label();
             btnRegistrar = new Button();
             contextMenuRegistrar = new ContextMenuStrip(components);
@@ -42,10 +43,13 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanelUsuario = new FlowLayoutPanel();
             btnBusqueda = new Button();
+            pictureBox2 = new PictureBox();
+            lblMenuForm = new Label();
             contextMenuRegistrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanelUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // lblTipoUsuario
@@ -69,10 +73,10 @@
             btnRegistrar.ForeColor = SystemColors.ControlText;
             btnRegistrar.Image = Properties.Resources.registrarIcon;
             btnRegistrar.ImageAlign = ContentAlignment.MiddleRight;
-            btnRegistrar.Location = new Point(0, 114);
+            btnRegistrar.Location = new Point(4, 114);
             btnRegistrar.Margin = new Padding(3, 2, 3, 2);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(205, 37);
+            btnRegistrar.Size = new Size(216, 37);
             btnRegistrar.TabIndex = 14;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -121,12 +125,12 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
-            btnCerrarSesion.Location = new Point(-2, 343);
+            btnCerrarSesion.Location = new Point(0, 343);
             btnCerrarSesion.Margin = new Padding(0);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(210, 37);
+            btnCerrarSesion.Size = new Size(223, 37);
             btnCerrarSesion.TabIndex = 15;
-            btnCerrarSesion.Text = "Cerrar Sesion";
+            btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
             // 
             // lblTipoUsuarioStatic
@@ -144,7 +148,7 @@
             // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.catPfp;
-            pictureBox1.Location = new Point(146, 0);
+            pictureBox1.Location = new Point(161, 0);
             pictureBox1.Margin = new Padding(0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 71);
@@ -194,7 +198,7 @@
             flowLayoutPanel1.Location = new Point(0, 1);
             flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(208, 342);
+            flowLayoutPanel1.Size = new Size(223, 342);
             flowLayoutPanel1.TabIndex = 23;
             // 
             // flowLayoutPanelUsuario
@@ -208,7 +212,7 @@
             flowLayoutPanelUsuario.Location = new Point(0, 0);
             flowLayoutPanelUsuario.Margin = new Padding(0);
             flowLayoutPanelUsuario.Name = "flowLayoutPanelUsuario";
-            flowLayoutPanelUsuario.Size = new Size(146, 71);
+            flowLayoutPanelUsuario.Size = new Size(161, 71);
             flowLayoutPanelUsuario.TabIndex = 24;
             // 
             // btnBusqueda
@@ -221,24 +225,48 @@
             btnBusqueda.ForeColor = SystemColors.ControlText;
             btnBusqueda.Image = Properties.Resources.searchIcon;
             btnBusqueda.ImageAlign = ContentAlignment.MiddleRight;
-            btnBusqueda.Location = new Point(0, 73);
+            btnBusqueda.Location = new Point(4, 73);
             btnBusqueda.Margin = new Padding(3, 2, 3, 2);
             btnBusqueda.Name = "btnBusqueda";
             btnBusqueda.RightToLeft = RightToLeft.No;
-            btnBusqueda.Size = new Size(205, 37);
+            btnBusqueda.Size = new Size(216, 37);
             btnBusqueda.TabIndex = 25;
-            btnBusqueda.Text = "Busqueda";
+            btnBusqueda.Text = "Búsqueda";
             btnBusqueda.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBusqueda.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.menuForm;
+            pictureBox2.Location = new Point(288, 51);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(249, 329);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            // 
+            // lblMenuForm
+            // 
+            lblMenuForm.AutoSize = true;
+            lblMenuForm.Font = new Font("Arial Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMenuForm.Location = new Point(288, 7);
+            lblMenuForm.Name = "lblMenuForm";
+            lblMenuForm.Size = new Size(249, 30);
+            lblMenuForm.TabIndex = 25;
+            lblMenuForm.Text = "SISTEMA DE TIENDA";
             // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(634, 380);
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(603, 380);
+            Controls.Add(lblMenuForm);
+            Controls.Add(pictureBox2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnCerrarSesion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "FrmMenu";
@@ -248,7 +276,9 @@
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanelUsuario.ResumeLayout(false);
             flowLayoutPanelUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -265,5 +295,7 @@
         public ToolStripMenuItem toolStripRegistrarCategoria;
         public ToolStripMenuItem toolStripRegistrarProductos;
         public FlowLayoutPanel flowLayoutPanelUsuario;
+        private PictureBox pictureBox2;
+        private Label lblMenuForm;
     }
 }

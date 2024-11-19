@@ -24,6 +24,7 @@ namespace Tienda.Controladores
 
             // Este ejecuta una funcion de mostrar el Menu cuando se cierra el registro de un producto
             _frmRegistroProducto.FormClosing += frmRegistroProducto_OnClosing;
+            _frmRegistroProducto.btnReturn.Click += frmRegistroProducto_OnClosing;
 
             // Este evento se ejecuta en cuanto se abre el formulario y carga las categorias en el comboBox de categorias
             _frmRegistroProducto.Load += frmRegistroProducto_Load;
