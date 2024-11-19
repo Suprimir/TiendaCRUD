@@ -37,12 +37,17 @@ namespace Tienda.Controladores
                     var buscarCategorias = categorias.Where(c => c.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
                     
                     _frmBusqueda.dataGridViewBusqueda.DataSource = buscarCategorias;
+                    _frmBusqueda.dataGridViewBusqueda.Columns[0].Width = 40;
+                    _frmBusqueda.dataGridViewBusqueda.Columns[2].Width = 120;
 
                     break;
                 case "Productos":
                     var buscarProductos = productos.Where(p => p.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
 
                     _frmBusqueda.dataGridViewBusqueda.DataSource = buscarProductos;
+                    _frmBusqueda.dataGridViewBusqueda.Columns[4].HeaderText = "Cat_id";
+                    _frmBusqueda.dataGridViewBusqueda.Columns[5].HeaderText = "Cat_nombre";
+                    _frmBusqueda.dataGridViewBusqueda.Columns[0].Width = 40;
 
                     break;
             }
