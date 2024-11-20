@@ -102,8 +102,8 @@
             toolStripRegistrarCategoria.Image = Properties.Resources.categoriasIcon;
             toolStripRegistrarCategoria.Name = "toolStripRegistrarCategoria";
             toolStripRegistrarCategoria.Size = new Size(205, 28);
-            toolStripRegistrarCategoria.Text = "Categorias";
-            toolStripRegistrarCategoria.ToolTipText = "Registrar categorias";
+            toolStripRegistrarCategoria.Text = "Categorías";
+            toolStripRegistrarCategoria.ToolTipText = "Registrar categorías";
             // 
             // toolStripRegistrarProductos
             // 
@@ -270,7 +270,7 @@
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "FrmMenu";
-            Text = "Menu";
+            Text = "Menú";
             contextMenuRegistrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);

@@ -86,7 +86,7 @@
             lblPrecioMinimo.Name = "lblPrecioMinimo";
             lblPrecioMinimo.Size = new Size(117, 21);
             lblPrecioMinimo.TabIndex = 4;
-            lblPrecioMinimo.Text = "Precio Minimo";
+            lblPrecioMinimo.Text = "Precio Mínimo";
             // 
             // numericPrecioMinimo
             // 
@@ -139,7 +139,7 @@
             Controls.Add(numericID);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmRegistroCategoria";
-            Text = "Registrar Categoria";
+            Text = "Registrar Categoría";
             ((System.ComponentModel.ISupportInitialize)numericID).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericPrecioMinimo).EndInit();
             ResumeLayout(false);

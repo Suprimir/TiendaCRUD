@@ -125,7 +125,7 @@
             comboBoxSeleccion.FlatStyle = FlatStyle.System;
             comboBoxSeleccion.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxSeleccion.FormattingEnabled = true;
-            comboBoxSeleccion.Items.AddRange(new object[] { "Categorias", "Productos" });
+            comboBoxSeleccion.Items.AddRange(new object[] { "Categorías", "Productos" });
             comboBoxSeleccion.Location = new Point(53, 5);
             comboBoxSeleccion.Margin = new Padding(5);
             comboBoxSeleccion.Name = "comboBoxSeleccion";

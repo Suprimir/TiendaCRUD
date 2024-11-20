@@ -33,7 +33,7 @@ namespace Tienda.Controladores
 
             switch (_frmBusqueda.comboBoxSeleccion.Text)
             {
-                case "Categorias":
+                case "Categorías":
                     var buscarCategorias = categorias.Where(c => c.Nombre.Contains(_frmBusqueda.textBoxBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
                     
                     _frmBusqueda.dataGridViewBusqueda.DataSource = buscarCategorias;
